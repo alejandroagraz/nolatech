@@ -1,0 +1,10 @@
+# For database local
+# MONO_DB_CONNECTION_STRING=mongodb://admin:1234@localhost:27017/nolatech?authSource=admin
+
+#For database in docker
+# MONO_DB_CONNECTION_STRING=mongodb://admin:1234@database:27017/nolatech?authSource=admin
+
+PORT=3000
+TOKEN_SECRET=nolatech
+EMAIL_USER=nolatechnotification@gmail.com
+EMAIL_PASS=xovyxitdsiuqcqlr

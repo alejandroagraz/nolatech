@@ -1,0 +1,28 @@
+version: '3.9'
+
+services:
+  database:
+    image: mongo:latest
+    container_name: ${PROJECTNAME_MONGO}-${JOB_BASE_NAME}
+    restart: always
+    ports:
+      - "${PORT_BD}:${PORT_BD}"
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: ${MONGO_USERNAME}
+      MONGO_INITDB_ROOT_PASSWORD: ${MONG_PASSWORD}
+      MONGO_INITDB_DATABASE: ${MONGO_DATABASE}
+      command: mongod--auth
+
+  app-server:
+    build:
+      context: ./projects/backend
+      dockerfile: Dockerfile
+    env_file: .env
+    container_name: ${PROJECTNAME_BACKEND}-${JOB_BASE_NAME}
+    image: server/${PROJECTNAME_BACKEND}
+    ports:
+      - "${PORT_LOCAL_BACKEND}:${PORT_LOCAL_BACKEND}"
+    volumes:
+      - ./projects/backend:/app
+    depends_on:
+      - database
