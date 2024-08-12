@@ -1,0 +1,5 @@
+projects/backend/node_modules/
+.idea/
+projects/backend/.env
+projects/backend/yarn.lock
+.env
