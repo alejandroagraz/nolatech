@@ -5,6 +5,7 @@ const cookieParser = require('cookie-parser');
 const mongoose = require('mongoose');
 const rateLimit = require('express-rate-limit');
 const cors = require('cors');
+const logger = require('morgan');
 const app = express();
 const CronNotification = require('./src/commands/tasks/evaluationPending');
 const homeRouter = require('./src/routes/home');
@@ -33,6 +34,7 @@ const limiter = rateLimit({
 app.use(limiter);
 
 // middlewares
+app.use(logger('dev'));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());

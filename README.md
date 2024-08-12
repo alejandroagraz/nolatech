@@ -9,6 +9,7 @@
 * Token protected routes
 * Role protected routes
 * Generate a report in xlsx format
+* Unit tests in jest
 * All environments are created with docker and docker-compose
 
 ## Starting 🚀
@@ -92,6 +93,11 @@ newgrp docker
 
 #### Additional information 📖
 ```diff
++ Run tests unit
+    To run unit tests you must run (yarn test) in the terminal
+    Para ejecutar las pruebas unitarias debe ejecutar en el terminal (yarn test) 
+
+
  Un empleado al momento de registrarse queda asignado a un departamento, por ende los verificadores para las evaluaciones
  son los gerentes de cada departamento, un departamento solo puede tener asignado un gerente, pero un gerente puede tener asignado varios departamentos,
  existe un cron job que se ejecuta cada 5 min para verificar si existe algun empleado que tenga alguna evaluacion pendiente por enviar,
@@ -142,6 +148,7 @@ newgrp docker
 +    MonogoDB
 +    Express
 +    JWT
++    Jest
 +    Docker
 +    Docker Compose
 ```
