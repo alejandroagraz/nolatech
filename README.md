@@ -1,9 +1,8 @@
-# Docker - Compose - Mongo - JWT - Express - React - Redux Toolkit
+# Docker - Compose - Mongo - JWT - Express
 
 ## Features
 
-#### Demo Api-Rest
-![Demo](file/demo.gif)
+#### Demo Api Nolatech
 
 ## Characteristic
 * User login
