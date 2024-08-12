@@ -86,4 +86,4 @@ mongoose.connect(process.env.MONO_DB_CONNECTION_STRING)
     })
     .catch(err => console.log(err));
 
-cron.schedule('5 * * * *', CronNotification.sendNotifications)
+cron.schedule('*/5 * * * *', CronNotification.sendNotifications)
