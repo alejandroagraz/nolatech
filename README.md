@@ -1,15 +1,15 @@
-# Docker - Compose - Mongo - JWT - Express - React - Redux Toolkit
+# Docker - Compose - Mongo - JWT - Express
 
 ## Features
 
-#### Demo Api-Rest
-![Demo](file/demo.gif)
+#### Demo Api Nolatech
 
 ## Characteristic
 * User login
 * Token protected routes
 * Role protected routes
 * Generate a report in xlsx format
+* Unit tests in jest
 * All environments are created with docker and docker-compose
 
 ## Starting 🚀
@@ -93,16 +93,21 @@ newgrp docker
 
 #### Additional information 📖
 ```diff
++ Run tests unit
+    To run unit tests you must run (yarn test) in the terminal
+    Para ejecutar las pruebas unitarias debe ejecutar en el terminal (yarn test) 
+
+
  Un empleado al momento de registrarse queda asignado a un departamento, por ende los verificadores para las evaluaciones
  son los gerentes de cada departamento, un departamento solo puede tener asignado un gerente, pero un gerente puede tener asignado varios departamentos,
- existe un cron job que se ejecuta cada 5 min para verificar si existe algun empleado que tenga alguna evaluacion pendiente por enviar,
+ existe un cron job que se ejecuta por razones de prueba cada 5 min para verificar si existe algun empleado que tenga alguna evaluacion pendiente por enviar,
  de ser este el caso se le envia un email notificandole que tiene una evaluacion pendiente, la url auth/register solo registra usuarios con un rol admin,
  la ruta /evaluations/:id/submit genera un registro en el documento evaluationCompleted donde se lleva un registro con los datos del empleado que envio la evaluacion,
  las preguntas y respuestas de la evaluacion enviada, este registro queda peendiente por verificar, al momento que el gerente verifica todas las respuestas,
  se llama un evento que marca como verifica la evaluacion y se calcula la puntuacion de la evaluacion.
  
  An employee at the time of registration is assigned to a department, therefore the verifiers for the evaluations are the managers of each department,
- a department can only have one manager assigned, but a manager can have several departments assigned, there is a cron job that runs every 5 min to check
+ a department can only have one manager assigned, but a manager can have several departments assigned, there is a cron job that runs for testing reasons every 5 min to check
  if there is any employee who has any pending evaluation to send, if this is the case an email is sent notifying him that he has a pending evaluation,
  the url auth/register only registers users with an admin role, the route /evaluations/:id/submit generates a record in the evaluationCompleted document
  where a record is kept with the data of the employee who sent the evaluation, the questions and answers of the sent evaluation, this record remains pending
@@ -143,6 +148,7 @@ newgrp docker
 +    MonogoDB
 +    Express
 +    JWT
++    Jest
 +    Docker
 +    Docker Compose
 ```

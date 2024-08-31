@@ -10,6 +10,7 @@ module.exports = {
 
     register: async (req, res) => {
         const user = await registerUser(req, res, Role.admin);
+
         if (!user)
             return res.status(400).send({
                 status: 'error',
@@ -17,7 +18,7 @@ module.exports = {
             });
 
         return res.status(201).send({
-            status: 'Success',
+            status: 'success',
             message: 'User registered successfully.',
             data: user,
         });
@@ -50,9 +51,9 @@ module.exports = {
                 }
             });
         } else {
-            return res.status(401).send({
+            return res.status(404).send({
                 status: 'error',
-                message: 'Username or password is incorrect'
+                message: 'User not found'
             });
         }
     }

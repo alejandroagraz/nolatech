@@ -14,7 +14,6 @@ module.exports = {
 
     getEvaluationsActive: async (id) => {
         const dateNow = moment().format('YYYY/MM/DD');
-        const _id = sanitize(id);
         return await Evaluation.find({
             status: Status.active,
             '$where': `this.endDate >= ${dateNow}`
